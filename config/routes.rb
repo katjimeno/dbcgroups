@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   authenticated :user do
-    root to: 'cohorts#index', as: :authenticated_root
+    root :to => 'cohorts#index' #, as: :authenticated_root
 
     resources :cohorts do
       resources :phases, only: [:new, :create, :index]
