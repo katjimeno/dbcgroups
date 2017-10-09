@@ -8,14 +8,14 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    if current_user
-      # return redirect_to(authenticated_root_url) #user_root_url
-    else
-      return "else"
-    end
-    super
-  end
+  # def create
+  #   if current_user
+  #     return redirect_to(user_root_url) #user_root_url
+  #   else
+  #     return "else"
+  #   end
+  #   super
+  # end
 
   # DELETE /resource/sign_out
   # def destroy

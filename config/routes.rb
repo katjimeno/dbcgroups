@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   authenticated :user do
-    root :to => 'cohorts#index' #, as: :authenticated_root
+    root :to => 'phases#index', as: :authenticated_root
 
     resources :cohorts do
       resources :phases, only: [:new, :create, :index]
@@ -28,6 +28,6 @@ Rails.application.routes.draw do
     end
 
   end
-
   root to: "home#index"
+
 end
