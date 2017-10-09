@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
-  authenticated :user do
+  # authenticated :user do
     root 'cohorts#index', as: :authenticated_root
 
     resources :cohorts do
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
       put '/:id', to: "weeks#update", as: 'update_week'
     end
 
-  end
+  # end
 
   root "home#index"
 end
