@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
-  authenticated :user do
+  # authenticated :user do
+  namespace :user do 
     root :to => 'phases#index', as: :authenticated_root
 
     resources :cohorts do
