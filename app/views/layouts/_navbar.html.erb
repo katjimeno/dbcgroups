@@ -1,6 +1,10 @@
-<%if user_signed_in? %>
+
   <p>
     <%= link_to "Home", "/" %>
     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   </p>
-<%end%>
+  <div>
+    <p class="alert alert-info"><%= alert %></p>
+    <p class="alert alert-warning"><%= notice %></p>
+  </div>
+
