@@ -3,27 +3,35 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   # def new
-  #   # redirect_to authenticated_root_path
-  #   super
+  #   redirect_to user_root_path
+  #   return 'hey'
+  # #   super
   # end
 
-  # POST /resource/sign_in
-  # def create
-  #   if current_user
-  #     return redirect_to(user_root_url) #user_root_url
-  #   else
-  #     return "else"
-  #   end
-  #   super
+  # # POST /resource/sign_in
+  def create
+  #   return after_sign_in_path_for(current_user)
+    if current_user
+      redirect_to cohorts_url
+  #   #   # return redirect_to(user_root_url) #user_root_url
+  #   #   return "hello"
+    else
+      redirect_to cohorts_url
+  #   #   return "else"
+    end
+  #   # super
+  end
+
+  # # DELETE /resource/sign_out
+  # # def destroy
+  # #   super
+  # # end
+
+  # # protected
+
+  # def after_sign_in_path_for(resource_or_scope)
+  #   return cohorts_path
   # end
-
-  # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
-
-  # protected
-
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
