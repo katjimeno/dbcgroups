@@ -14,14 +14,14 @@
       </div>
     <% end %>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :class => "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :location %>
-      <%= f.select :location, [["San Diego", 'San Diego'], ["New York", "New York"],["Chicago", "Chicago"], ["Austin", "Austin"], ["San Francisco", "San Francisco"],["Seattle", "Seattle"], ["Washington DC", "Washington DC"]] %>
+      <%= f.select :location, [["San Diego", 'San Diego'], ["New York", "New York"],["Chicago", "Chicago"], ["Austin", "Austin"], ["San Francisco", "San Francisco"],["Seattle", "Seattle"], ["Washington DC", "Washington DC"]], :class => "form-control" %>
     </div>
 
     <div class="actions">
