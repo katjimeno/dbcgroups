@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     scope :weeks do
       put '/:id', to: "weeks#update", as: 'update_week'
     end
-end
+  end
 
   # end
   root to: "home#index"

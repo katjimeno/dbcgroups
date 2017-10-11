@@ -10,14 +10,11 @@ class Users::SessionsController < Devise::SessionsController
 
   # # POST /resource/sign_in
   def create
-  #   return after_sign_in_path_for(current_user)
     if current_user
-      redirect_to cohorts_url
-  #   #   # return redirect_to(user_root_url) #user_root_url
-  #   #   return "hello"
+      return redirect_to(cohorts_url)
+  #   return redirect_to(user_root_url) #user_root_url
     else
-      redirect_to cohorts_url
-  #   #   return "else"
+      redirect_to root_url
     end
   #   # super
   end
